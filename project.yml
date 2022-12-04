@@ -3,7 +3,9 @@ environment: {}
 packages:
     - name: snapshot
       shared: false
-      environment: {}
+      environment:
+        token: ${token}
+        droplet: ${droplet}
       parameters: {}
       annotations: {}
       functions:
