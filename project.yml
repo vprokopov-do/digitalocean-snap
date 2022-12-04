@@ -13,8 +13,6 @@ packages:
           binary: false
           main: ""
           runtime: python:default
-          web: true
-          websecure: false
           parameters: {}
           environment: {}
           annotations: {}
