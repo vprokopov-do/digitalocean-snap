@@ -19,7 +19,7 @@ packages:
           limits:
             timeout: 60000
           triggers:
-          - name: snapshot-cron
-            sourceType: scheduler
-            sourceDetails:
-              cron: "0 */3 * * *"
+            - name: snapshot-cron
+              sourceType: scheduler
+              sourceDetails:
+                cron: "0 */3 * * *"
