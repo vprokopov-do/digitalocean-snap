@@ -5,16 +5,16 @@ packages:
       shared: false
       environment:
         token: ${token}
-        droplet: ${droplet}
       parameters: {}
       annotations: {}
       functions:
-        - name: droplet
+        - name: your-droplet-name
           binary: false
           main: ""
           runtime: python:default
           parameters: {}
-          environment: {}
+          environment:
+            droplet: ${droplet}
           annotations: {}
           limits:
             timeout: 60000
