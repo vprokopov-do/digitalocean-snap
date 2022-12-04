@@ -1,0 +1,20 @@
+parameters: {}
+environment: {}
+packages:
+    - name: snapshot
+      shared: false
+      environment: {}
+      parameters: {}
+      annotations: {}
+      functions:
+        - name: droplet
+          binary: false
+          main: ""
+          runtime: python:default
+          web: true
+          websecure: false
+          parameters: {}
+          environment: {}
+          annotations: {}
+          limits:
+            timeout: 60000
