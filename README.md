@@ -11,7 +11,7 @@ Currently, DigitalOcean offers weekly automated backups for Droplets. However, y
 - You'd need to have the latest `doctl` with the serverless software [installed](https://docs.digitalocean.com/reference/doctl/reference/serverless/).
 - You'd need to create a serverless namespace and [connect](https://docs.digitalocean.com/products/functions/how-to/create-namespaces/) `doctl` to it.
 - You'd need to get a personal access token [generated](https://docs.digitalocean.com/reference/api/create-personal-access-token/) to use DigitalOcean API.
-- You'd need to [get](https://docs.digitalocean.com/products/droplets/how-to/retrieve-droplet-metadata/) a Droplet ID of a Droplet that you want to get backed up.
+- You'd need to [obtain](https://docs.digitalocean.com/products/droplets/how-to/retrieve-droplet-metadata/) a Droplet ID of a Droplet that you want to get backed up.
 
 ##### How to deploy
 
