@@ -38,4 +38,4 @@ doctl serverless deploy do-snap
 ```
 
 ##### Example `project.yml`
-![Token](/images/token.png)
+![Token](/images/example.png)
