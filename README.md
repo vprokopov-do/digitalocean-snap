@@ -20,5 +20,16 @@ Currently, DigitalOcean offers weekly automated backups for Droplets. However, y
 3. Modify `project.yaml` and replace environment variable `droplet` with your Droplet ID.
 4. Modify `project.yaml` and rename a function to your Droplet's name.
 5. Rename the "your-droplet-name" directory to your Droplet's name.
+```
+do-snap
+├── project.yml
+└── packages
+    └── do-snap
+        └── your-droplet-name       <- rename
+            └── droplet.py
+```
 6. Optional - modify `project.yaml` and adjust the cron schedule (runs every 6 hours by default).
-7. Use doctl to Deploy the Function on DigitalOcean.
+7. Use `doctl` to Deploy the Function on DigitalOcean.
+```
+doctl serverless deploy do-snap
+```
