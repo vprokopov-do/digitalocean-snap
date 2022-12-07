@@ -16,9 +16,16 @@ Currently, DigitalOcean offers weekly automated backups for Droplets. However, y
 ##### How to deploy
 
 1. Make a local clone of this GitHub repository.
-2. Modify `project.yaml` and replace environment variable `token` with your API token.
-3. Modify `project.yaml` and replace environment variable `droplet` with your Droplet ID.
-4. Modify `project.yaml` and rename a function to your Droplet's name.
+2. Modify `project.yml` and replace environment variable `token` with your API token.
+
+![Token](/images/token.png)
+
+3. Modify `project.yml` and replace environment variable `droplet` with your Droplet ID.
+
+![Droplet](/images/droplet.png)
+4. Modify `project.yml` and rename a function and a trigger to your Droplet's name.
+
+![Function](/images/function.png)
 5. Rename the "your-droplet-name" directory to your Droplet's name.
 ```
 do-snap
