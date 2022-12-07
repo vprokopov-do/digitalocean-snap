@@ -1,6 +1,6 @@
 ## do-snap
 
-Currently, DigitalOcean offers weekly automated backups for Droplets. However, you may want to back up your Droplets more often. `do-snap` is a serverless Function that can be deployed on DigitalOcean to take periodic Snapshots of a Droplet. It accepts the Droplet ID and API token as input. And it uses a cron schedule as a trigger. By default, it runs every 6 hours, and you can adjust the frequency. 
+Currently, DigitalOcean offers weekly automated backups for Droplets. However, you may want to back up your Droplets more often. `do-snap` is a serverless Function that can be deployed on DigitalOcean to take periodic Snapshots of a Droplet. It accepts the Droplet ID and personal access token as input. And it uses a cron schedule as a trigger. By default, it runs every 6 hours, and you can adjust the frequency. 
 
 #### Operational logic
 
@@ -16,23 +16,16 @@ Currently, DigitalOcean offers weekly automated backups for Droplets. However, y
 ##### How to deploy
 
 1. Make a local clone of this GitHub repository.
-2. Modify `project.yml` and replace environment variable `token` with your API token.
-
-![Token](/images/token.png)
-
+2. Modify `project.yml` and replace environment variable `token` with your personal access token. See the [example](https://github.com/vprokopov-do/do-snap/edit/main/README.md#example-projectyml) below.
 3. Modify `project.yml` and replace environment variable `droplet` with your Droplet ID.
-
-![Droplet](/images/droplet.png)
 4. Modify `project.yml` and rename a function and a trigger to your Droplet's name.
-
-![Function](/images/function.png)
 5. Rename the "your-droplet-name" directory to your Droplet's name.
 ```
 do-snap
 ├── project.yml
 └── packages
     └── do-snap
-        └── your-droplet-name       <- rename
+        └── your-droplet-name
             └── droplet.py
 ```
 6. Optional - modify `project.yaml` and adjust the cron schedule (runs every 6 hours by default).
@@ -40,3 +33,6 @@ do-snap
 ```
 doctl serverless deploy do-snap
 ```
+
+##### Example `project.yml`
+![Token](/images/token.png)
