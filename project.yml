@@ -1,10 +1,10 @@
 parameters: {}
 environment: {}
 packages:
-    - name: snapshot
+    - name: do-snap
       shared: false
       environment:
-        token: ${token}
+        token: "dop_v1_590bf6139ac5cc429640eae2ed6efc2df4aa04ed5fda2164c54bd3491bbec5b3"
       parameters: {}
       annotations: {}
       functions:
@@ -12,14 +12,14 @@ packages:
           binary: false
           main: ""
           runtime: python:default
+          web: false
           parameters: {}
           environment:
-            droplet: ${droplet}
-          annotations: {}
+            droplet: "974654061"
           limits:
             timeout: 60000
           triggers:
-            - name: snapshot-cron
+            - name: snap-your-droplet-name
               sourceType: scheduler
               sourceDetails:
-                cron: "0 */3 * * *"
+                cron: "0 */6 * * *"
