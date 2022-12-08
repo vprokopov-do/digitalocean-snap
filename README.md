@@ -19,7 +19,7 @@ Currently, DigitalOcean offers weekly automated backups for Droplets. However, y
 ```
 git clone https://github.com/vprokopov-do/do-snap
 ```
-2. Modify `project.yml` and replace environment variable `token` with your personal access token. See the example `project.yml` in the next section.
+2. Modify `project.yml` and replace environment variable `token` with your personal access token. See the next section for the `project.yml` example.
 3. Modify `project.yml` and replace environment variable `droplet` with your Droplet ID.
 4. Modify `project.yml` and rename a function and a trigger to your Droplet's name.
 5. Rename the "your-droplet-name" directory to your Droplet's name.
