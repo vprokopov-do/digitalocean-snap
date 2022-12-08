@@ -39,3 +39,6 @@ doctl serverless deploy do-snap
 
 ### Example `project.yml`
 ![Token](/images/example.png)
+
+### Author
+Vasily Prokopov [@vprokopov-do](https://github.com/vprokopov-do/)
