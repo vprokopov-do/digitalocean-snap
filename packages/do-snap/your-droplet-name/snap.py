@@ -19,9 +19,9 @@ def main(args):
     body = ''
     for droplet in droplets:
         msg = snap(droplet, token)
-        body = body + f"Droplet ID: {droplet} - {msg}"
+        body = body + f"Droplet ID: {droplet} - {msg}\n"  # Adding a newline between messages
 
-    # Returning the final message.
+    # Returning the final message with new lines.
     return {"body": body}
 
 def snap(droplet, token):
@@ -37,9 +37,9 @@ def snap(droplet, token):
     
     # Checking the response status code to handle success or errors.
     if trigger_snapshot_creation.status_code == 201:
-        msg = f"Snapshot creation triggered: {snapshot_name}. "
+        msg = f"Snapshot creation triggered: {snapshot_name}."
     else:
-        msg = "Error: Snapshot creation failed. "
+        msg = "Error: Snapshot creation failed."
 
     # Triggering snapshot deletion.
     url_list_snapshots = f"{url_base}/snapshots"
@@ -54,11 +54,11 @@ def snap(droplet, token):
                 
                 # Checking the response status code to handle success or errors.
                 if trigger_snapshot_deletion.status_code == 204:
-                    msg += f"Snapshot deletion triggered: {value['name']}. "
+                    msg += f" Snapshot deletion triggered: {value['name']}."
                 else:
-                    msg += "Error: Snapshot deletion failed. "
+                    msg += " Error: Snapshot deletion failed."
     else:
-        msg += "Error: Unable to list snapshots. "
+        msg += " Error: Unable to list snapshots."
         
     return msg
 
