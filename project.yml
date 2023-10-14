@@ -4,22 +4,22 @@ packages:
     - name: do-snap
       shared: false
       environment:
-        token: ""                                 # Provide your personal access token.
+        token: ""                                 # Personal access token needed here.
       parameters: {}
       annotations: {}
       functions:
-        - name: your-droplet-name                 # Rename to your Droplet's name.
+        - name: your-droplet-name                 # Change to your Droplet's name or group name (e.g., "front-end-server" or "production-droplets").
           binary: false
           main: ""
           runtime: python:default
           web: false
           parameters: {}
           environment:
-            droplets: ""                           # Provide your Droplet ID.
+            droplets: ""                           # Provide Droplet ID or comma-separated list of Droplet IDs.
           limits:
             timeout: 60000
           triggers:
-            - name: snap-your-droplet-name        # Rename to your Droplet's name.
+            - name: snap-your-droplet-name         # Change to your trigger name (e.g., "every-six-hours").
               sourceType: scheduler
               sourceDetails:
-                cron: "0 */6 * * *"               # Adjust cron schedule (runs every 6 hours by default).
+                cron: "0 */6 * * *"                # Adjust cron schedule (runs every 6 hours by default).
