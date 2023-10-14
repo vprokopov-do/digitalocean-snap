@@ -15,11 +15,11 @@ packages:
           web: false
           parameters: {}
           environment:
-            droplet: ""                           # Provide your Droplet ID.
+            droplets: ""                           # Provide your Droplet ID.
           limits:
             timeout: 60000
           triggers:
             - name: snap-your-droplet-name        # Rename to your Droplet's name.
               sourceType: scheduler
               sourceDetails:
-                cron: "0 */6 * * *"               # Adjust cron shcedule (runs every 6 hours by default).
+                cron: "0 */6 * * *"               # Adjust cron schedule (runs every 6 hours by default).
