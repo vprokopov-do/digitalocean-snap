@@ -19,7 +19,7 @@ packages:
           limits:
             timeout: 60000
           triggers:
-            - name: your-trigger-name         # Change to your trigger name (e.g., "every-six-hours").
+            - name: your-trigger-name              # Change to your trigger name (e.g., "every-six-hours").
               sourceType: scheduler
               sourceDetails:
                 cron: "0 */6 * * *"                # Adjust cron schedule (runs every 6 hours by default).
