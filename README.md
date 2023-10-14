@@ -30,13 +30,14 @@ do-snap
 └── packages
     └── do-snap
         └── your-droplet-name
-            └── droplet.py
+            └── snap.py
 ```
 4. Optional - modify `project.yaml` and adjust the cron schedule (runs every 6 hours by default).
 5. Use `doctl` to Deploy the Function on DigitalOcean.
 ```
 doctl serverless deploy do-snap
 ```
+Note that you need to run the deploy command on the entire cloned-down folder.
 
 ### Example `project.yml`
 ![Token](/images/example.png)
