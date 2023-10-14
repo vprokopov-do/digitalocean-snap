@@ -6,23 +6,24 @@ def main(args):
     # Ingesting the access token.
     token = os.getenv('token', None)
     if not token:
-        return {"body": "Error: No access token provided. The process is terminating."}
+        return {"body": ["Error: No access token provided. The process is terminating."]}
 
     # Ingesting the list of Droplet IDs.
     droplets = os.getenv("droplets", None)
     if not droplets:
-        return {"body": "Error: No Droplet IDs provided. The process is terminating."}
+        return {"body": ["Error: No Droplet IDs provided. The process is terminating."]}
     droplets = droplets.split(',')
 
+    # Initializing a list to store messages.
+    messages = []
+
     # Looping through the list of Droplet IDs and generating messages.
-    msg = ''
-    body = ''
     for droplet in droplets:
         msg = snap(droplet, token)
-        body = body + f"Droplet ID: {droplet} - {msg}\n"  # Adding a newline between messages
+        messages.append(f"Droplet ID: {droplet} - {msg}")
 
-    # Returning the final message with new lines.
-    return {"body": body}
+    # Returning the final message as a list of strings.
+    return {"body": messages}
 
 def snap(droplet, token):
     # Building the base URL.
