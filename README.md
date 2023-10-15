@@ -1,29 +1,32 @@
 ## do-snap
 
-Currently, DigitalOcean offers weekly automated backups for Droplets. However, you may want to back up your Droplets more often. `do-snap` is a serverless Function that can be deployed on DigitalOcean to take periodic Snapshots of a Droplet. It accepts the Droplet ID and personal access token as input. And it uses a cron schedule as a trigger. By default, it runs every 6 hours, and you can adjust the frequency. 
+DigitalOcean currently offers weekly automated backups for Droplets. However, you might want to back up your Droplets more frequently. `do-snap` is a serverless function that can be deployed on DigitalOcean to take periodic snapshots of a Droplet. It accepts the Droplet ID and a personal access token as input and uses a cron schedule as a trigger. By default, it runs every 6 hours, and you can adjust the frequency.
+
 
 ### Operational logic
 
-`do-snap` would connect to DigitalOcean API and access your account by using the personal access token provided. It would take a Snapshot of a Droplet you specify and delete an old Snapshot so that only a single Snapshot copy is kept at all times.
+`do-snap` connects to the DigitalOcean API and accesses your account using the provided personal access token. It takes a snapshot of the specified Droplet and deletes an old snapshot, ensuring that only a single snapshot copy is retained at all times.
 
 ### Prerequisites
 
-- You'd need the latest `doctl` with the serverless software [installed](https://docs.digitalocean.com/reference/doctl/reference/serverless/).
-- You'd need to create a serverless namespace and [connect](https://docs.digitalocean.com/products/functions/how-to/create-namespaces/) `doctl` to it.
-- You'd need to get a personal access token [generated](https://docs.digitalocean.com/reference/api/create-personal-access-token/) to use DigitalOcean API.
-- You'd need to [obtain](https://docs.digitalocean.com/products/droplets/how-to/retrieve-droplet-metadata/) a Droplet ID of a Droplet that you want to get backed up.
+To use `do-snap`, you'll need:
+- The latest version of `doctl` with the serverless software [installed](https://docs.digitalocean.com/reference/doctl/reference/serverless/).
+- A serverless namespace created and [connected](https://docs.digitalocean.com/products/functions/how-to/create-namespaces/) to `doctl`.
+- A personal access token [generated](https://docs.digitalocean.com/reference/api/create-personal-access-token/) for using the DigitalOcean API.
+- The Droplet ID or a list of comma-separated Droplet IDs that you want to back up. You can [retrieve](https://docs.digitalocean.com/products/droplets/how-to/retrieve-droplet-metadata/) the Droplet ID.
+
 
 ### How to deploy
 
-1. Make a local clone of this GitHub repository.
+1. Clone this GitHub repository to your local machine.
 ```
 git clone https://github.com/vprokopov-do/do-snap
 ```
 2. Modify `project.yml`:
 - Replace the environment variable `token` with your personal access token. See the next section below for the `project.yml` example.
 - Replace the environment variable `droplets` with your Droplet ID or list of comma-separated Droplet IDs.
-- Optional – rename a function and a trigger to something that makes sense to you.
-3. Rename the "your-droplet-name" directory to your Droplet's name.
+- Optionally, rename a function and a trigger to names that make sense to you.
+3. Rename the "your-droplet-name" directory to match your Droplet's name.
 ```
 do-snap
 ├── project.yml
@@ -32,7 +35,7 @@ do-snap
         └── your-droplet-name
             └── snap.py
 ```
-4. Optional - modify `project.yaml` and adjust the cron schedule (runs every 6 hours by default).
+4. Optionally, modify `project.yaml` to adjust the cron schedule (it runs every 6 hours by default).
 5. Use `doctl` to Deploy the Function on DigitalOcean.
 ```
 doctl serverless deploy do-snap
