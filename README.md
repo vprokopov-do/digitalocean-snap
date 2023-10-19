@@ -25,8 +25,8 @@ git clone https://github.com/vprokopov-do/do-snap
 2. Modify `project.yml`:
 - Replace the environment variable `token` with your personal access token. See the next section below for the `project.yml` example.
 - Replace the environment variable `droplets` with your Droplet ID or list of comma-separated Droplet IDs.
-- Optionally, rename a function and a trigger to names that make sense to you.
-3. Rename the "your-droplet-name" directory to match your Droplet's name.
+- Optionally, rename a Function and a Trigger to names that make sense to you.
+3. **Important:** Rename the "your-function-name" directory to match your Function name (if you renamed a Function in step 2).
 ```
 do-snap
 ├── project.yml
