@@ -45,5 +45,5 @@ Note that you need to run the deploy command on the entire cloned-down folder.
 ### Example `project.yml`
 ![Token](/images/example.png)
 
-### Author
-Vasily Prokopov [@vprokopov-do](https://github.com/vprokopov-do/)
+## Contact
+If you wish to learn more about DigitalOcean's services, feel free to contact me at [vprokopov@digitalocean.com](mailto:vprokopov@digitalocean.com). You are also welcome to reach out to the sales team at [sales@digitalocean.com](mailto:sales@digitalocean.com). A global team of talented engineers will be happy to provide assistance.
